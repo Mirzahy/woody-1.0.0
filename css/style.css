@@ -206,14 +206,12 @@
 }
 
 .header-carousel .owl-dots {
-    position: absolute;
-    height: 45px;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    margin: 30px auto 0;   /* ovo ih “spušta” */
+    transform: none;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .header-carousel .owl-dot {
@@ -620,4 +618,102 @@
 
 .footer .copyright a:hover {
     color: var(--primary);
+}
+/* Catalog style dio */
+.catalog-carousel .item{
+  height: 85vh;              /* probaj 85vh, pa po potrebi 100vh */
+}
+
+.catalog-carousel .catalog-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* ne reže katalog stranicu */
+  background: #000;          /* crna pozadina oko slike */
+}
+
+.catalog-carousel .owl-nav{
+  position: static;
+  width: 460px;            /* povećaj za veći razmak */
+  margin: 15px auto 0;     /* auto centriranje */
+  display: flex;
+  justify-content: space-between;
+  height: auto;            /* nemoj 5px */
+  transform: none;         /* OBAVEZNO ugasi */
+}
+
+.catalog-carousel .owl-nav .owl-prev,
+.catalog-carousel .owl-nav .owl-next{
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f7abab;
+  background: transparent;
+  border: 1px solid #ffffff;
+  font-size: 22px;
+  transition: .5s;
+}
+
+.catalog-carousel .owl-nav .owl-prev:hover,
+.catalog-carousel .owl-nav .owl-next:hover{
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Dots (pagination) for catalog carousel */
+.catalog-carousel .owl-dots{
+  position: static;
+  transform: none;
+  margin: -30px auto 0;
+  max-width: 360px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.catalog-carousel .owl-dot{
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  background: #9c9c9c;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  transition: .5s;
+}
+
+.catalog-carousel .owl-dot::after{
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  top: 4px;
+  left: 4px;
+  border: 1px solid #fff;
+  border-color: #ffffff; 
+}
+
+.catalog-carousel .owl-dot.active{
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Stabilna visina itema */
+.catalog-carousel .owl-item,
+.catalog-carousel .item{
+  height: 85vh;
+}
+
+/* Slika popunjava item */
+.catalog-carousel .catalog-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* bitno za katalog */
+  display: block;
+  background: #fff;
 }
