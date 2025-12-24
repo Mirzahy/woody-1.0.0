@@ -84,6 +84,30 @@
         }
     });
 
+    // Catalog carousels (Katalog page)
+    if ($('.catalog-carousel').length) {
+
+        var $cat = $(".catalog-carousel");
+
+        $cat.owlCarousel({
+            items: 1,
+            loop: true,
+            nav: true,
+            dots: true,
+            lazyLoad: false,
+            //lazyLoadEager: 5,
+            navText: [
+                '<i class="bi bi-chevron-left"></i>',
+                '<i class="bi bi-chevron-right"></i>'
+            ]
+        });
+
+       /* $cat.on('loaded.owl.lazy', function () {
+            $cat.trigger('refresh.owl.carousel');
+        }); */
+    }
+
+
 
     // Portfolio isotope and filter
     var portfolioIsotope = $('.portfolio-container').isotope({
