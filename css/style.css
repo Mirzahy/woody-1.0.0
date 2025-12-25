@@ -376,7 +376,7 @@
     height: 0;
     bottom: 0;
     left: 50%;
-    background: rgba(53, 53, 53, .7);
+    background: rgba(240, 19, 19, 0.7);
     transition: .5s;
 }
 
@@ -392,6 +392,18 @@
 
 .portfolio-item:hover .portfolio-overlay .btn {
     opacity: 1;
+}
+
+/* Katalozi - stilovi */
+#portfolio-flters li a{
+  color: #9ea6ac;         /* Katalozi-neaktivno */
+  text-decoration: none;
+}
+
+/* Kad je aktivno/hover: smeđe kao prije */
+#portfolio-flters li:hover a,
+#portfolio-flters li.active a{
+  color: var(--primary);
 }
 
 
@@ -633,7 +645,7 @@
 
 .catalog-carousel .owl-nav{
   position: static;
-  width: 460px;            /* povećaj za veći razmak */
+  width: 630px;            /* razmak između strelica prev-next */
   margin: 15px auto 0;     /* auto centriranje */
   display: flex;
   justify-content: space-between;
@@ -666,7 +678,7 @@
   position: static;
   transform: none;
   margin: -30px auto 0;
-  max-width: 360px;
+  max-width: 660px;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
@@ -716,4 +728,16 @@
   object-fit: contain; /* bitno za katalog */
   display: block;
   background: #fff;
+}
+
+.catalog-carousel{
+  margin-bottom: 160px;   /* razmak između kataloga i donje linije */
+}
+
+html { scroll-behavior: smooth; }
+
+.h-100.d-inline-flex.align-items-center a.btn.btn-sm-square.bg-white.text-primary:hover{
+  background-color: var(--primary) !important;
+  color: #fff !important;
+  border-color: var(--primary) !important; /* ako ima border */
 }
