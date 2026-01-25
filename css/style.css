@@ -284,6 +284,18 @@
     display: none;
 }
 
+.section-title.text-start h1::after {
+    display: none;
+}
+
+.section-title.text-center h1::before {
+    display: none;
+}
+
+.section-title.text-center h1::after {
+    display: none;
+}
+
 
 /*** About ***/
 @media (min-width: 992px) {
