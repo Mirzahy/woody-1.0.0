@@ -284,6 +284,18 @@
     display: none;
 }
 
+.section-title.text-start h1::after {
+    display: none;
+}
+
+.section-title.text-center h1::before {
+    display: none;
+}
+
+.section-title.text-center h1::after {
+    display: none;
+}
+
 
 /*** About ***/
 @media (min-width: 992px) {
@@ -644,13 +656,17 @@
 }
 
 .catalog-carousel .owl-nav{
-  position: static;
-  width: 630px;            /* razmak između strelica prev-next */
-  margin: 15px auto 0;     /* auto centriranje */
-  display: flex;
-  justify-content: space-between;
-  height: auto;            /* nemoj 5px */
-  transform: none;         /* OBAVEZNO ugasi */
+    position: absolute; /* overlay nav on sides of image */
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px; /* distance from edges */
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 10;
+    margin: 0; /* ensure no extra margin under carousel */
 }
 
 .catalog-carousel .owl-nav .owl-prev,
@@ -675,15 +691,16 @@
 
 /* Dots (pagination) for catalog carousel */
 .catalog-carousel .owl-dots{
-  position: static;
-  transform: none;
-  margin: -30px auto 0;
-  max-width: 660px;
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    transform: none;
+    margin: 15px auto 0; /* place dots below images */
+    max-width: 660px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
 
 }
 
@@ -731,7 +748,8 @@
 }
 
 .catalog-carousel{
-  margin-bottom: 160px;   /* razmak između kataloga i donje linije */
+    position: relative; /* needed so .owl-nav absolute positions relative to this */
+    margin-bottom: 160px;   /* razmak između kataloga i donje linije */
 }
 
 html { scroll-behavior: smooth; }
@@ -740,4 +758,21 @@ html { scroll-behavior: smooth; }
   background-color: var(--primary) !important;
   color: #fff !important;
   border-color: var(--primary) !important; /* ako ima border */
+}
+
+/* Katalozi: separate small-square button style for katalog social links */
+.btn-sm-square-kat{
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.katalozi-social a.btn-sm-square-kat:hover{
+    background-color: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
 }
