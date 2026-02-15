@@ -207,7 +207,7 @@
 
 .header-carousel .owl-dots {
     position: static;
-    margin: 30px auto 0;   /* ovo ih “spušta” */
+    margin: 30px auto 0;   /* ovo ih “spušta” - strelice na */ 
     transform: none;
     display: flex;
     justify-content: center;
